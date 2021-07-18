@@ -1,5 +1,5 @@
 # action.yml
-name: 'changelog'
+name: 'hornv-changelog'
 description: 'create change log from previous tag to current state by PRs'
 outputs:
   changelog: # id of output
