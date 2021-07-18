@@ -1,6 +1,9 @@
 # action.yml
 name: 'hornv-changelog'
 description: 'create change log from previous tag to current state by PRs'
+branding:
+  icon: 'book-open'
+  color: 'blue'
 outputs:
   changelog: # id of output
     description: 'name of PR - url to PR'
