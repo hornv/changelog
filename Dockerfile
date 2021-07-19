@@ -1,7 +1,7 @@
 # Container image that runs your code
 FROM ubuntu-latest
 
-RUN apk add git
+RUN apt-get install git
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
 
