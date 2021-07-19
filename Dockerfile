@@ -1,8 +1,23 @@
 # Container image that runs your code
-FROM ubuntu:latest
 
-RUN apt-get update && apt-get install git -y
-# Copies your code file from your action repository to the filesystem path `/` of the container
+FROM alpine
+
+RUN apk add git jq
+
+ADD https://github.com/cli/cli/releases/download/v1.12.1/gh_1.12.1_linux_amd64.tar.gz ./
+RUN tar xvzf gh_1.12.1_linux_amd64.tar.gz \
+    && ln -s /gh_1.12.1_linux_amd64/bin/gh /usr/sbin/gh
+
+
+
+
+#FROM ubuntu:latest
+
+#RUN apt-get update && apt-get install git jq -y
+#ADD https://github.com/cli/cli/releases/download/v1.12.1/gh_1.12.1_linux_amd64.deb ./
+#RUN dpkg -i gh_1.12.1_linux_amd64.deb
+
+
 COPY entrypoint.sh /entrypoint.sh
 
 # WORKDIR /github/workspace
