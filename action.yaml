@@ -4,11 +4,11 @@ description: 'create change log from previous tag to current state by PRs'
 branding:
   icon: 'book-open'
   color: 'blue'
-inputs:
-  sinceTag:
-    description: 'Changes after this tag are included (default last tag)'
-    required: false
-    default: "'$(git describe --abbrev=0 --tags `git rev-list --tags --skip=1 --max-count=1`)'"
+# inputs:
+#   sinceTag:
+#     description: 'Changes after this tag are included (default last tag)'
+#     required: false
+    # default: "'$(git describe --abbrev=0 --tags `git rev-list --tags --skip=1 --max-count=1`)'"
 outputs:
   changelog: # id of output
     description: 'name of PR - url to PR'
