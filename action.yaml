@@ -8,12 +8,11 @@ inputs:
   sinceTag:
     description: 'Changes after this tag are included (default last tag)'
     required: false
-    default: "ls"
+    default: "ps"
 outputs:
   changelog: # id of output
     description: 'name of PR - url to PR'
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.sinceTag }}
+  
