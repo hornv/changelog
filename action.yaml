@@ -8,7 +8,7 @@ inputs:
   sinceTag:
     description: 'Changes after this tag are included (default last tag)'
     required: false
-    default: "'$(git describe --abbrev=0 --tags `git rev-list --tags --skip=1 --max-count=1`)'"
+    default: "$(git describe --abbrev=0 --tags `git rev-list --tags --skip=1 --max-count=1`)"
 outputs:
   changelog: # id of output
     description: 'name of PR - url to PR'
