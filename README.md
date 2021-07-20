@@ -15,3 +15,6 @@ multistring result
 ## Example usage
 
 uses: actions/changelog@v1
+
+## usefull info
+to fix GV_VERSION arg for Dockerfile is used. so if it is nessecery just change that arg.
