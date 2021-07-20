@@ -15,4 +15,5 @@ outputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  
+  env:
+    GH_VERSION: 1.12.1
