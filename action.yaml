@@ -5,15 +5,15 @@ branding:
   icon: 'book-open'
   color: 'blue'
 inputs:
-  sinceTag:
-    description: 'Changes after this tag are included (default last tag)'
+  gv_version:
+    description: 'gh_version to use'
     required: false
-    default: "ps"
+    default: "1.12.1"
 outputs:
   changelog: # id of output
     description: 'name of PR - url to PR'
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  env:
-    GH_VERSION: 1.12.1
+  args:
+    - --build-args GH_VERSION=${{ inputs.gv_version }}
