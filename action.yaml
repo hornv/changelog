@@ -5,7 +5,7 @@ branding:
   icon: 'book-open'
   color: 'blue'
 inputs:
-  gv_version:
+  gh_version:
     description: 'gh_version to use'
     required: false
     default: "1.12.1"
@@ -16,4 +16,4 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - --build-args GH_VERSION=${{ inputs.gv_version }}
+    - --build-args GH_VERSION=${{ inputs.gh_version }}
