@@ -4,16 +4,9 @@ description: 'create change log from previous tag to current state by PRs'
 branding:
   icon: 'book-open'
   color: 'blue'
-inputs:
-  gh_version:
-    description: 'gh_version to use'
-    required: false
-    default: "1.12.1"
 outputs:
   changelog: # id of output
     description: 'name of PR - url to PR'
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - --build-args GH_VERSION=${{ inputs.gh_version }}
