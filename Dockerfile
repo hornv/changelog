@@ -2,15 +2,15 @@
 
 FROM alpine:3
 
-RUN apk add git jq
+RUN apk add git jq bash
 
 ADD https://github.com/cli/cli/releases/download/v1.12.1/gh_1.12.1_linux_amd64.tar.gz ./
+# COPY gh_1.12.1_linux_amd64.tar.gz ./
 RUN tar xvzf gh_1.12.1_linux_amd64.tar.gz \
-    && ln -s /gh_1.12.1_linux_amd64/bin/gh /usr/sbin/gh \
-    && mkdir -p /github/workspace
+    && ln -s /gh_1.12.1_linux_amd64/bin/gh /usr/sbin/gh 
 
-WORKDIR /github/workspace
-VOLUME [/github/workspace]
+# WORKDIR /github/workspace
+# VOLUME [/github/workspace]
 
 #FROM ubuntu:latest
 
@@ -20,6 +20,8 @@ VOLUME [/github/workspace]
 
 
 COPY entrypoint.sh /entrypoint.sh
+
+RUN cat /entrypoint.sh
 
 # WORKDIR /github/workspace
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
