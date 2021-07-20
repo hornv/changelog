@@ -1,6 +1,6 @@
 # Container image that runs your code
 
-FROM alpine
+FROM alpine:3
 
 RUN apk add git jq
 
@@ -9,8 +9,8 @@ RUN tar xvzf gh_1.12.1_linux_amd64.tar.gz \
     && ln -s /gh_1.12.1_linux_amd64/bin/gh /usr/sbin/gh \
     && mkdir -p /github/workspace
 
-VOLUME [/github/workspace]
 WORKDIR /github/workspace
+VOLUME [/github/workspace]
 
 #FROM ubuntu:latest
 
