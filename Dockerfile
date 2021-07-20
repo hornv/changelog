@@ -2,7 +2,8 @@
 
 FROM alpine:3
 
-RUN apk add git jq bash
+RUN apk update && apk add git jq && apk add bash
+
 
 ADD https://github.com/cli/cli/releases/download/v1.12.1/gh_1.12.1_linux_amd64.tar.gz ./
 # COPY gh_1.12.1_linux_amd64.tar.gz ./
